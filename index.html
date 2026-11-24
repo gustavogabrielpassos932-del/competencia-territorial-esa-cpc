@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competência Territorial na Jurisprudência — Material Completo (ESA OAB + CPC + CDC + STF/STJ + Vault)</title>
+<style>
+  :root {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-2: #f1f5f9;
+    --text: #0f172a;
+    --muted: #475569;
+    --border: #e2e8f0;
+    --primary: #1e3a8a;
+    --primary-light: #dbeafe;
+    --accent: #0284c7;
+    --law-bg: #fefce8;
+    --law-border: #ca8a04;
+    --warn-bg: #fef2f2;
+    --warn-border: #dc2626;
+    --ok-bg: #f0fdf4;
+    --ok-border: #16a34a;
+    --shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+  }
+  [data-theme="dark"] {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface-2: #0b1120;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --border: #334155;
+    --primary: #60a5fa;
+    --primary-light: #1e3a8a;
+    --accent: #38bdf8;
+    --law-bg: #1c1917;
+    --law-border: #eab308;
+    --warn-bg: #2a1215;
+    --warn-border: #f87171;
+    --ok-bg: #052e16;
+    --ok-border: #4ade80;
+    --shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+  header {
+    background: linear-gradient(135deg, #1e3a8a, #0369a1);
+    color: #ffffff;
+    padding: 28px 20px;
+    box-shadow: var(--shadow);
+  }
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+  .badge {
+    display: inline-block; background: rgba(255,255,255,0.18);
+    padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 8px;
+  }
+  h1 { margin: 0 0 6px; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.25; }
+  .subtitle { margin: 0; opacity: 0.92; font-size: 0.95rem; }
+  .theme-btn {
+    background: rgba(255,255,255,0.16); color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.35); border-radius: 8px;
+    padding: 8px 14px; cursor: pointer; font-weight: 600; font-size: 13px;
+  }
+  nav.tabs {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 10px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .tabs-inner { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: thin; }
+  .tab-btn {
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--text);
+    padding: 8px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px;
+    white-space: nowrap; transition: 0.15s;
+  }
+  .tab-btn.active { background: var(--primary); color: #ffffff; border-color: var(--primary); }
+  main { padding: 24px 0 60px; }
+  section.panel { display: none; }
+  section.panel.active { display: block; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 22px; margin-bottom: 18px; box-shadow: var(--shadow);
+  }
+  h2 { margin-top: 0; color: var(--primary); font-size: 1.3rem; border-bottom: 2px solid var(--border); padding-bottom: 8px; }
+  h3 { color: var(--accent); font-size: 1.08rem; margin: 18px 0 8px; }
+  .law-box {
+    background: var(--law-bg); border-left: 4px solid var(--law-border);
+    border-radius: 8px; padding: 14px 16px; margin: 12px 0; font-size: 0.94rem;
+  }
+  .law-title { font-weight: 700; color: var(--law-border); margin-bottom: 6px; display: block; }
+  .callout-warn { background: var(--warn-bg); border-left: 4px solid var(--warn-border); border-radius: 8px; padding: 13px 16px; margin: 12px 0; }
+  .callout-ok { background: var(--ok-bg); border-left: 4px solid var(--ok-border); border-radius: 8px; padding: 13px 16px; margin: 12px 0; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.92rem; }
+  th, td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; vertical-align: top; }
+  th { background: var(--surface-2); font-weight: 700; }
+  ul, ol { padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  .vault-ref {
+    font-size: 0.85rem; color: var(--muted); background: var(--surface-2);
+    padding: 3px 8px; border-radius: 6px; display: inline-block; margin-top: 4px;
+  }
+  .quiz-bar {
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    background: var(--surface); border: 1px solid var(--border); padding: 14px 18px;
+    border-radius: 12px; margin-bottom: 18px; box-shadow: var(--shadow);
+  }
+  .score-pill { font-weight: 700; font-size: 0.95rem; color: var(--primary); }
+  .reset-btn {
+    background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+    padding: 7px 14px; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 13px;
+  }
+  .q-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px; margin-bottom: 16px; box-shadow: var(--shadow);
+  }
+  .q-head { font-weight: 700; margin-bottom: 12px; font-size: 0.98rem; }
+  .q-tag {
+    display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px;
+    border-radius: 999px; background: var(--primary-light); color: var(--primary); margin-right: 8px;
+  }
+  .opt-btn {
+    display: block; width: 100%; text-align: left; background: var(--surface-2); color: var(--text);
+    border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 8px;
+    cursor: pointer; font-size: 0.93rem; transition: 0.15s;
+  }
+  .opt-btn:hover:not(:disabled) { border-color: var(--accent); }
+  .opt-btn.correct { background: var(--ok-bg); border-color: var(--ok-border); font-weight: 600; }
+  .opt-btn.wrong { background: var(--warn-bg); border-color: var(--warn-border); }
+  .q-exp {
+    display: none; margin-top: 10px; padding: 12px 14px; border-radius: 8px;
+    background: var(--surface-2); border-left: 4px solid var(--accent); font-size: 0.9rem;
+  }
+  .q-exp.show { display: block; }
+  footer {
+    text-align: center; color: var(--muted); font-size: 0.85rem; padding: 20px 16px 40px;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="header-top">
+      <div>
+        <span class="badge">ESA Nacional · Processo Civil · Aula 08 · Teses dos Tribunais + Vault Obsidian</span>
+        <h1>Competência Territorial na Jurisprudência e no CPC</h1>
+        <p class="subtitle">Aula Prof. Guilherme Hartmann integrada com Doutrina (Elpídio Donizetti), CPC (arts. 46, 48, 52, 53, 63 — Lei 14.879/2024, 64, 75, 203, 927 e 1.015), CDC (arts. 51 e 101), Lei 9.099/95, STF (ADI 5.737) e STJ (Tema 988, Súmulas 33 e 540) · 50 Questões</p>
+      </div>
+      <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">Modo Escuro</button>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="container tabs-inner">
+    <button class="tab-btn active" onclick="openTab('tab1', this)">1. Conceito &amp; Recurso</button>
+    <button class="tab-btn" onclick="openTab('tab2', this)">2. Entes Públicos &amp; Inventário</button>
+    <button class="tab-btn" onclick="openTab('tab3', this)">3. Alimentos, Divórcio &amp; DPVAT</button>
+    <button class="tab-btn" onclick="openTab('tab4', this)">4. Consumo &amp; Foro de Eleição</button>
+    <button class="tab-btn" onclick="openTab('tab5', this)">5. Quadros &amp; Pegadinhas</button>
+    <button class="tab-btn" onclick="openTab('tab6', this)">6. Bateria (50 Questões)</button>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- ABA 1 -->
+  <section id="tab1" class="panel active">
+    <div class="card">
+      <h2>1. Alegação de Incompetência, Natureza da Decisão e Recurso Cabível</h2>
+      <p>No CPC/2015, tanto a incompetência <strong>absoluta</strong> quanto a <strong>relativa</strong> são arguidas como <strong>questão preliminar de contestação</strong> (extinguiu-se o antigo incidente de exceção de incompetência do CPC/73). Acolhida a alegação, os autos são remetidos ao juízo competente, conservando-se os efeitos das decisões anteriores até nova deliberação.</p>
+      <ul>
+        <li><strong>Natureza do pronunciamento:</strong> A decisão que reconhece a incompetência (provocando o declínio) ou a rejeita (mantendo o feito no juízo) <strong>não extingue o processo</strong>; trata-se de <strong>decisão interlocutória</strong> (CPC, art. 203, § 2º).</li>
+        <li><strong>Recurso cabível (Tema 988/STJ e julgado STJ 2023):</strong> Embora o rol do art. 1.015 do CPC não preveja expressamente a decisão sobre competência, o STJ firmou tese vinculante (art. 927, III, CPC) de <strong>taxatividade mitigada</strong>, cabendo <strong>Agravo de Instrumento</strong> contra decisões interlocutórias que definem a competência.</li>
+      </ul>
+
+      <div class="law-box">
+        <span class="law-title">CPC — Arts. 64, 203 (§ 2º) e 927 (inciso III)</span>
+        <p><strong>Art. 64.</strong> A incompetência, absoluta ou relativa, será alegada como questão preliminar de contestação.<br>
+        <strong>§ 1º</strong> A incompetência absoluta pode ser alegada em qualquer tempo e grau de jurisdição e deve ser declarada de ofício.<br>
+        <strong>§ 2º</strong> Após manifestação da parte contrária, o juiz decidirá imediatamente a alegação de incompetência.<br>
+        <strong>§ 3º</strong> Caso a alegação de incompetência seja acolhida, os autos serão remetidos ao juízo competente.<br>
+        <strong>§ 4º</strong> Salvo decisão judicial em sentido contrário, conservar-se-ão os efeitos de decisão proferida pelo juízo incompetente até que outra seja proferida, se for o caso, pelo juízo competente.</p>
+        <p><strong>Art. 203, § 2º</strong> Decisão interlocutória é todo pronunciamento judicial de natureza decisória que não se enquadre no § 1º.</p>
+        <p><strong>Art. 927.</strong> Os juízes e os tribunais observarão: (...) <strong>III</strong> – os acórdãos em incidente de assunção de competência ou de resolução de demandas repetitivas e em julgamento de recursos extraordinário e especial repetitivos;</p>
+      </div>
+      <span class="vault-ref">Fontes: Aula 08 ESA (Prof. Hartmann) · Elpídio Donizetti (Cap. 3 — Competência) · CPC arts. 64, 203 e 927</span>
+    </div>
+  </section>
+
+  <!-- ABA 2 -->
+  <section id="tab2" class="panel">
+    <div class="card">
+      <h2>2. Competência Territorial em Ações contra Estado, União e Municípios</h2>
+      <p>Quando o Estado ou o Distrito Federal figura como <strong>autor</strong>, a ação deve ser proposta no domicílio do réu (art. 52, caput). Quando figura como <strong>réu</strong>, o art. 52, parágrafo único, faculta ao autor ajuizar a demanda em seu próprio domicílio, no local do fato, na situação da coisa ou na capital do ente.</p>
+
+      <div class="callout-warn">
+        <strong>STF — ADI 5.737/DF (2023) e ADI 5.492/DF (Vault):</strong> O Supremo Tribunal Federal deu <strong>interpretação conforme à Constituição</strong> aos arts. 52, parágrafo único, e 46, § 5º, do CPC: o foro do domicílio do autor em ações contra Estado-membro fica <strong>restrito às comarcas situadas dentro dos limites territoriais daquele Estado</strong>.
+        <ul>
+          <li><em>Pode:</em> Morador de Petrópolis, Campos ou Angra dos Reis demandar o Estado do RJ em sua própria comarca.</li>
+          <li><em>Não pode:</em> Morador de São Paulo, São Luís ou Belo Horizonte demandar o Estado do RJ em sua cidade (respeito à autonomia e estrutura das procuradorias estaduais).</li>
+          <li><strong>União e Municípios:</strong> Essa restrição territorial <em>não</em> se aplica à União (cuja AGU atua em todo o Brasil — art. 51, CPC e art. 109, § 2º, CF/88) nem aos Municípios.</li>
+        </ul>
+      </div>
+
+      <div class="law-box">
+        <span class="law-title">CPC — Arts. 46 (§ 5º), 52 e 75 (§ 4º)</span>
+        <p><strong>Art. 46, § 5º</strong> A execução fiscal será proposta no foro de domicílio do réu, no de sua residência ou no do lugar onde for encontrado.</p>
+        <p><strong>Art. 52.</strong> É competente o foro de domicílio do réu para as causas em que seja autor Estado ou o Distrito Federal.<br>
+        <strong>Parágrafo único.</strong> Se Estado ou o Distrito Federal for o demandado, a ação poderá ser proposta no foro de domicílio do autor, no de ocorrência do ato ou fato que originou a demanda, no de situação da coisa ou na capital do respectivo ente federado.</p>
+        <p><strong>Art. 75, § 4º</strong> Os Estados e o Distrito Federal poderão ajustar compromisso recíproco para prática de ato processual por seus procuradores em favor de outro ente federado, mediante convênio firmado pelas respectivas procuradorias.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>3. Competência Territorial em Inventário</h2>
+      <p>O inventário deve ser proposto, em regra, no <strong>foro do último domicílio do autor da herança (falecido) no Brasil</strong> (art. 48, caput), pois é onde geralmente concentrou suas últimas relações sociais e negócios. Inexistindo domicílio certo, aplicam-se os foros subsidiários do parágrafo único.</p>
+      <p><strong>Natureza relativa (Súmula 33/STJ):</strong> Se os herdeiros ajuizarem o inventário em foro diverso (ex.: onde estão os bens e residem os herdeiros) e ninguém contestar, a competência <strong>prorroga-se</strong> (art. 65, CPC), não podendo o juiz reconhecer a incompetência territorial de ofício.</p>
+
+      <div class="law-box">
+        <span class="law-title">CPC — Art. 48 e Súmula 33 do STJ</span>
+        <p><strong>Art. 48.</strong> O foro de domicílio do autor da herança, no Brasil, é o competente para o inventário, a partilha, a arrecadação, o cumprimento de disposições de última vontade, a impugnação ou anulação de partilha extrajudicial e para todas as ações em que o espólio for réu, ainda que o óbito tenha ocorrido no estrangeiro.<br>
+        <strong>Parágrafo único.</strong> Se o autor da herança não possuía domicílio certo, é competente:<br>
+        I – o foro de situação dos bens imóveis;<br>
+        II – havendo bens imóveis em foros diferentes, qualquer destes;<br>
+        III – não havendo bens imóveis, o foro do local de qualquer dos bens do espólio.</p>
+        <p><strong>Súmula 33/STJ:</strong> "A incompetência relativa não pode ser declarada de ofício."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABA 3 -->
+  <section id="tab3" class="panel">
+    <div class="card">
+      <h2>4. Ações de Alimentos, Divórcio e Acidentes de Veículo (DPVAT)</h2>
+      <p>Enquanto a <strong>regra geral</strong> do CPC é o foro de domicílio do réu (art. 46), o <strong>art. 53</strong> estabelece foros especiais protetivos ou funcionais de natureza territorial relativa:</p>
+      <ul>
+        <li><strong>Alimentos (art. 53, II):</strong> Foro de <strong>domicílio ou residência do alimentando</strong>, facilitando o pleito de quem está em situação de necessidade. Por ser competência relativa, o alimentando pode optar pelo domicílio do réu (sem prejuízo a este). <em>(Vault: Súmula 1/STJ aplica-o inclusive na investigação de paternidade cumulada com alimentos.)</em></li>
+        <li><strong>Divórcio, separação, anulação de casamento e união estável (art. 53, I):</strong> Ordem sucessiva: (a) domicílio do guardião de filho incapaz; (b) último domicílio do casal, se não houver incapaz; (c) domicílio do réu, se nenhum residir no antigo foro; (d) domicílio da vítima de violência doméstica e familiar (Lei Maria da Penha).</li>
+        <li><strong>Acidente de veículo e Seguro DPVAT (art. 53, V e Súmula 540/STJ):</strong> Tríplice opção concorrente para o autor: <strong>domicílio do autor</strong>, <strong>local do fato (acidente)</strong> ou <strong>domicílio do réu</strong> (regra geral). A <strong>Súmula 540/STJ</strong> estende expressamente essa tríplice opção às ações de cobrança do seguro DPVAT.</li>
+      </ul>
+
+      <div class="law-box">
+        <span class="law-title">CPC — Arts. 46 (caput) e 53 (I, II e V) + Súmula 540 do STJ</span>
+        <p><strong>Art. 46.</strong> A ação fundada em direito pessoal ou em direito real sobre bens móveis será proposta, em regra, no foro de domicílio do réu.</p>
+        <p><strong>Art. 53.</strong> É competente o foro:<br>
+        <strong>I</strong> – para a ação de divórcio, separação, anulação de casamento e reconhecimento ou dissolução de união estável:<br>
+        a) de domicílio do guardião de filho incapaz;<br>
+        b) do último domicílio do casal, caso não haja filho incapaz;<br>
+        c) de domicílio do réu, se nenhuma das partes residir no antigo domicílio do casal;<br>
+        d) de domicílio da vítima de violência doméstica e familiar, nos termos da Lei nº 11.340, de 7 de agosto de 2006 (Lei Maria da Penha);<br>
+        <strong>II</strong> – de domicílio ou residência do alimentando, para a ação em que se pedem alimentos; (...)<br>
+        <strong>V</strong> – de domicílio do autor ou do local do fato, para a ação de reparação de dano sofrido em razão de delito ou acidente de veículos, inclusive aeronaves.</p>
+        <p><strong>Súmula 540/STJ:</strong> "Na ação de cobrança do seguro DPVAT, constitui faculdade do autor escolher entre os foros do seu domicílio, do local do acidente ou ainda do domicílio do réu."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABA 4 -->
+  <section id="tab4" class="panel">
+    <div class="card">
+      <h2>5. Competência Territorial nas Relações de Consumo</h2>
+      <p>O <strong>art. 101, I, do CDC</strong> assegura ao consumidor a faculdade de ajuizar a ação de responsabilidade civil no <strong>foro do seu próprio domicílio</strong> (inclusive em compras pela internet ou viagens). Conforme <strong>julgado do STJ de fevereiro de 2025</strong> e o <strong>art. 4º, III, da Lei nº 9.099/1995</strong>, o consumidor também pode optar pelo <strong>domicílio do réu</strong> ou pelo <strong>local de cumprimento da obrigação</strong>.</p>
+      <p><strong>Cláusula de eleição de foro em contratos de consumo:</strong> Cláusulas abusivas que afastem o acesso à justiça ou coloquem o consumidor em desvantagem exagerada são nulas de pleno direito (art. 51, IV e XVII, CDC). Contudo, segundo <strong>julgado do STJ de 2018</strong>, a mera condição de consumidor ou a existência de contrato de adesão <em>não invalidam automaticamente</em> a cláusula — é preciso verificar se há efetiva vulnerabilidade ou prejuízo à defesa (ex.: empresa consumidora com corpo jurídico técnico).</p>
+
+      <div class="law-box">
+        <span class="law-title">CDC Arts. 51 (trecho) e 101 (I) + Lei nº 9.099/1995 Art. 4º</span>
+        <p><strong>Art. 51 (CDC).</strong> São nulas de pleno direito, entre outras, as cláusulas contratuais relativas ao fornecimento de produtos e serviços que: (...)<br>
+        <strong>IV</strong> – estabeleçam obrigações consideradas iníquas, abusivas, que coloquem o consumidor em desvantagem exagerada, ou sejam incompatíveis com a boa-fé ou a equidade; (...)<br>
+        <strong>XVII</strong> – condicionem ou limitem de qualquer forma o acesso aos órgãos do Poder Judiciário;</p>
+        <p><strong>Art. 101 (CDC).</strong> Na ação de responsabilidade civil do fornecedor de produtos e serviços, sem prejuízo do disposto nos Capítulos I e II deste Título, serão observadas as seguintes normas:<br>
+        <strong>I</strong> – a ação pode ser proposta no domicílio do autor;</p>
+        <p><strong>Art. 4º (Lei nº 9.099/1995).</strong> É competente, para as causas previstas nesta Lei, o Juizado do foro:<br>
+        I – do domicílio do réu ou, a critério do autor, do local onde aquele exerça atividades profissionais ou econômicas ou mantenha estabelecimento, filial, agência, sucursal ou escritório;<br>
+        II – do lugar onde a obrigação deva ser satisfeita;<br>
+        III – do domicílio do autor ou do local do ato ou fato, nas ações para reparação de dano de qualquer natureza.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>6. Foro de Eleição e a Reforma da Lei nº 14.879/2024 (Art. 63, CPC)</h2>
+      <p>A <strong>Lei nº 14.879/2024</strong> (em vigor desde 05/06/2024) reformou o art. 63 do CPC para extinguir o <strong>foro de eleição aleatório</strong> (<em>forum shopping</em>) em <strong>qualquer demanda civil</strong> (não apenas consumerista).</p>
+
+      <div class="callout-ok">
+        <strong>Principais Regras do Novo Art. 63 (Lei nº 14.879/2024 + STJ 2025):</strong>
+        <ul>
+          <li><strong>Pertinência obrigatória (§ 1º):</strong> A eleição de foro deve constar de instrumento escrito, referir-se a negócio jurídico determinado e guardar pertinência com o <strong>domicílio/residência de uma das partes</strong> ou com o <strong>local da obrigação</strong> (ressalvada a pactuação consumerista quando favorável ao consumidor).</li>
+          <li><strong>Juízo aleatório = prática abusiva (§ 5º):</strong> O ajuizamento em juízo sem vinculação com as partes ou com o negócio jurídico justifica a <strong>declinação de competência de ofício</strong> (exceção legal expressa à Súmula 33/STJ).</li>
+          <li><strong>Momento do controle (§§ 3º e 4º):</strong> O juiz pode afastar de ofício <strong>antes da citação</strong>; após citado, incumbe ao réu alegar a abusividade na contestação, sob pena de preclusão.</li>
+          <li><strong>Direito intertemporal (Vault — STJ, CC 206.933/SP, 2025):</strong> Por ter natureza processual, a reforma aplica-se a todos os processos <strong>ajuizados a partir de 05/06/2024</strong>, independentemente da data de assinatura do contrato.</li>
+        </ul>
+      </div>
+
+      <div class="law-box">
+        <span class="law-title">CPC — Art. 63 (Redação Atualizada pela Lei nº 14.879/2024 no Vault)</span>
+        <p><strong>Art. 63.</strong> As partes podem modificar a competência em razão do valor e do território, elegendo foro onde será proposta ação oriunda de direitos e obrigações.<br>
+        <strong>§ 1º</strong> A eleição de foro somente produz efeito quando constar de instrumento escrito, aludir expressamente a determinado negócio jurídico e guardar pertinência com o domicílio ou a residência de uma das partes ou com o local da obrigação, ressalvada a pactuação consumerista, quando favorável ao consumidor.<br>
+        <strong>§ 2º</strong> O foro contratual obriga os herdeiros e sucessores das partes.<br>
+        <strong>§ 3º</strong> Antes da citação, a cláusula de eleição de foro, se abusiva, pode ser reputada ineficaz de ofício pelo juiz, que determinará a remessa dos autos ao juízo do foro de domicílio do réu.<br>
+        <strong>§ 4º</strong> Citado, incumbe ao réu alegar a abusividade da cláusula de eleição de foro na contestação, sob pena de preclusão.<br>
+        <strong>§ 5º</strong> O ajuizamento de ação em juízo aleatório, entendido como aquele sem vinculação com o domicílio ou a residência das partes ou com o negócio jurídico discutido na demanda, constitui prática abusiva que justifica a declinação de competência de ofício.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABA 5 -->
+  <section id="tab5" class="panel">
+    <div class="card">
+      <h2>7. Quadro Comparativo: Incompetência Absoluta vs. Relativa</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Critério</th><th>Incompetência Absoluta</th><th>Incompetência Relativa</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Espécies</strong></td><td>Matéria, pessoa, função (e territorial absoluta, ex.: art. 47, §§ 1º e 2º — imóveis)</td><td>Território (regra geral) e valor da causa</td></tr>
+            <tr><td><strong>Conhecimento de ofício</strong></td><td><strong>SIM</strong> (deve ser declarada de ofício — art. 64, § 1º)</td><td><strong>NÃO</strong> (Súmula 33/STJ), <strong>SALVO</strong> cláusula abusiva/juízo aleatório antes da citação (art. 63, §§ 3º e 5º)</td></tr>
+            <tr><td><strong>Prorrogação / Preclusão</strong></td><td>Não prorroga; arguível em qualquer tempo e grau (cabe rescisória — art. 966, II)</td><td>Prorroga-se se não arguida na preliminar de contestação (art. 65)</td></tr>
+            <tr><td><strong>Modificação por convenção</strong></td><td>Inderrogável (art. 62)</td><td>Modificável por eleição de foro (art. 63), conexão ou continência</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>8. Mapa Rápido de Pegadinhas de Prova</h2>
+      <ul>
+        <li><strong>Decisão sobre competência:</strong> É <strong>interlocutória</strong> (art. 203, § 2º) → cabe <strong>Agravo de Instrumento</strong> pelo <strong>Tema 988/STJ</strong> (taxatividade mitigada), mesmo sem constar no art. 1.015.</li>
+        <li><strong>Ação contra Estado-membro (art. 52, parágrafo único + ADI 5.737/DF):</strong> Domicílio do autor só vale <strong>dentro dos limites territoriais do Estado réu</strong>. Não se aplica à União nem aos Municípios.</li>
+        <li><strong>Inventário (art. 48):</strong> Último domicílio do falecido; competência <strong>relativa</strong> — o juiz não declina de ofício (Súmula 33/STJ).</li>
+        <li><strong>Alimentos (art. 53, II):</strong> Domicílio/residência do alimentando (relativa — o autor pode optar pelo domicílio do réu).</li>
+        <li><strong>Acidente de veículo e DPVAT (art. 53, V + Súmula 540/STJ):</strong> Tríplice opção (domicílio do autor, local do fato ou domicílio do réu).</li>
+        <li><strong>Consumidor (art. 101, I, CDC + STJ fev./2025):</strong> Pode optar pelo próprio domicílio, domicílio do réu ou local da obrigação. Cláusula de eleição de foro em contrato de adesão não é automaticamente nula se não houver vulnerabilidade/prejuízo (STJ, 2018).</li>
+        <li><strong>Lei nº 14.879/2024 (art. 63, §§ 1º e 5º):</strong> Proibiu juízo aleatório em qualquer contrato; juiz declina de ofício <strong>antes da citação</strong>; aplica-se a ações ajuizadas a partir de 05/06/2024 (STJ, CC 206.933/SP).</li>
+        <li><strong>Ações reais imobiliárias (art. 47, §§ 1º e 2º — Vault):</strong> Foro da situação da coisa é competência territorial <strong>absoluta</strong> para propriedade, vizinhança, servidão, divisão, demarcação e posse de imóveis.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ABA 6 -->
+  <section id="tab6" class="panel">
+    <div class="quiz-bar">
+      <div class="score-pill" id="scoreBox">Respondidas: 0 / 50 · Acertos: 0</div>
+      <button class="reset-btn" onclick="resetQuiz()">Reiniciar Bateria</button>
+    </div>
+    <div id="quizContainer"></div>
+  </section>
+
+</main>
+
+<footer>
+  Material de Estudo Autossuficiente · Fontes Internas do Vault Obsidian (CPC arts. 46–66, 75, 203, 927 e 1.015, CDC arts. 51 e 101, Lei 9.099/95 art. 4º, Súmulas 33 e 540/STJ, Doutrina Elpídio Donizetti Cap. 3 e Aula 08 ESA Nacional — Prof. Guilherme Hartmann).
+</footer>
+
+<script>
+function toggleTheme() {
+  const dark = document.documentElement.getAttribute("data-theme") === "dark";
+  document.documentElement.setAttribute("data-theme", dark ? "light" : "dark");
+  document.getElementById("themeBtn").textContent = dark ? "Modo Escuro" : "Modo Claro";
+}
+
+function openTab(id, btn) {
+  document.querySelectorAll("section.panel").forEach(s => s.classList.remove("active"));
+  document.querySelectorAll("button.tab-btn").forEach(b => b.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  btn.classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+const QUESTIONS = [
+  // 1-20: Tópicos da Aula 08 ESA (Prof. Guilherme Hartmann)
+  { tag: "Aula ESA", q: "Qual é a justificativa para que o filho (alimentando) possa ajuizar a ação de alimentos em seu próprio domicílio (art. 53, II, CPC), mesmo residindo o réu em outro estado?", opts: ["É uma regra de competência absoluta imutável.", "O réu não pode contestar ações de alimentos.", "Para facilitar o acesso à justiça e o pleito de alimentos de quem está em situação de necessidade.", "Depende de autorização prévia do juiz do domicílio do réu.", "Porque o CPC aboliu o foro do domicílio do réu."], ans: 2, exp: "CPC, art. 53, II: foro especial protetivo que facilita o pleito de alimentos pelo alimentando." },
+  { tag: "Aula ESA", q: "Qual interpretação o STF adotou na ADI 5.737/DF (2023) quanto ao foro do domicílio do autor em ações contra Estados-membros (art. 52, parágrafo único, CPC)?", opts: ["Declarou a inconstitucionalidade total do art. 52.", "Permitiu que qualquer morador do Brasil acione qualquer Estado em seu próprio domicílio.", "Deu interpretação conforme à Constituição para restringir o foro do domicílio do autor às comarcas dentro dos limites territoriais do Estado-membro réu.", "Estendeu a restrição também à União Federal.", "Proibiu ações contra Estados fora da capital."], ans: 2, exp: "STF (ADI 5.737/DF e ADI 5.492/DF): o foro do domicílio do autor limita-se às comarcas inseridas nos limites territoriais do respectivo Estado." },
+  { tag: "Aula ESA", q: "Como se classifica o pronunciamento judicial que reconhece a incompetência e determina o declínio (remessa) dos autos ao juízo competente?", opts: ["Sentença terminativa.", "Despacho de mero expediente.", "Decisão interlocutória (art. 203, § 2º, CPC).", "Acórdão.", "Ato ordinatório do escrivão."], ans: 2, exp: "CPC, art. 203, § 2º, e art. 64, § 3º: não extingue o processo, sendo decisão interlocutória." },
+  { tag: "Aula ESA", q: "Segundo a interpretação do STF na ADI 5.737/DF, quais moradores NÃO podem ajuizar ação contra o Estado do Rio de Janeiro em seu próprio domicílio?", opts: ["Moradores de Petrópolis e Angra dos Reis.", "Moradores de Campos dos Goytacazes e Paraty.", "Moradores da capital do Rio de Janeiro.", "Moradores de São Paulo, São Luís e Belo Horizonte (fora dos limites territoriais do RJ).", "Nenhum morador do Estado do Rio de Janeiro."], ans: 3, exp: "Apenas moradores de comarcas situadas dentro do Estado do RJ podem acioná-lo em seu domicílio." },
+  { tag: "Aula ESA", q: "O que ocorre se os herdeiros ajuizarem o inventário em comarca diversa do último domicílio do falecido e nenhum interessado arguir a incompetência?", opts: ["O inventário é nulo de pleno direito.", "O juiz deve extinguir o processo de ofício imediatamente.", "Os custos processuais são dobrados.", "A competência territorial é relativa e prorroga-se, não podendo o juiz decliná-la de ofício (Súmula 33/STJ).", "O juiz remete os autos de ofício ao STJ."], ans: 3, exp: "CPC, arts. 48 e 65; Súmula 33/STJ: a incompetência relativa não pode ser declarada de ofício." },
+  { tag: "Aula ESA", q: "Qual é a justificativa prática pela qual o art. 48 do CPC fixa como regra principal do inventário o foro do último domicílio do autor da herança?", opts: ["Porque é sempre onde o falecido nasceu.", "Porque é geralmente onde o falecido estabeleceu suas últimas relações sociais e negócios.", "Porque é sempre onde residem todos os herdeiros.", "Porque a competência é absoluta e inderrogável.", "Porque dispensa o pagamento de ITCMD."], ans: 1, exp: "O último domicílio concentra, em regra, as últimas relações sociais, credores e negócios do falecido." },
+  { tag: "Aula ESA", q: "Qual é a regra geral de competência territorial para ações fundadas em direito pessoal ou direito real sobre bens móveis no CPC (art. 46)?", opts: ["Foro do domicílio do autor.", "Foro do domicílio do réu.", "Foro do local do fato.", "Foro da capital do Estado.", "Qualquer foro à escolha livre do autor."], ans: 1, exp: "CPC, art. 46, caput: em regra, no foro de domicílio do réu." },
+  { tag: "Aula ESA", q: "Em contratos de consumo (inclusive de adesão), qual é o limite imposto pelo CDC e pela jurisprudência quanto às cláusulas de eleição de foro?", opts: ["São sempre válidas, mesmo prejudicando o consumidor.", "São sempre nulas, sem exceção.", "Não podem configurar cláusula abusiva que afaste o foro vantajoso e dificulte a defesa do consumidor (art. 51, CDC); mas a mera condição de consumidor não a invalida automaticamente sem vulnerabilidade (STJ, 2018).", "Devem sempre eleger a sede do fornecedor.", "Dependem de registro em cartório de imóveis."], ans: 2, exp: "CDC, art. 51, IV e XVII, c/c STJ (2018): verifica-se abuso/vulnerabilidade concreta." },
+  { tag: "Aula ESA", q: "Quais são as restrições impostas pela reforma de 2024 (Lei nº 14.879/2024 — art. 63, § 1º, CPC) à cláusula de eleição de foro?", opts: ["Permite escolher qualquer comarca do país livremente.", "Exige instrumento escrito, alusão a negócio jurídico determinado e pertinência com o domicílio ou residência de uma das partes ou com o local da obrigação.", "Aplica-se apenas a contratos de consumo.", "Proibiu integralmente qualquer eleição de foro no Brasil.", "Permite foro aleatório em contratos acima de 100 SM."], ans: 1, exp: "CPC, art. 63, § 1º (redação da Lei nº 14.879/2024): veda o foro de eleição aleatório." },
+  { tag: "Aula ESA", q: "Por ser relativa a competência territorial na ação de alimentos (art. 53, II, CPC), o alimentando pode:", opts: ["Ajuizar exclusivamente no domicílio do réu.", "Escolher entre o seu próprio domicílio/residência ou o domicílio do réu.", "Ajuizar apenas na capital federal.", "Apenas se o réu concordar por escrito.", "Submeter-se à declinação de ofício pelo juiz."], ans: 1, exp: "Sendo foro protetivo relativo, o alimentando pode dispor dele e propor a ação no domicílio do réu." },
+  { tag: "Aula ESA", q: "O que pode fazer o juiz se verificar que a ação foi ajuizada em juízo aleatório (sem vinculação com o domicílio/residência das partes ou com o negócio jurídico — art. 63, § 5º, CPC)?", opts: ["Nada, pois a Súmula 33/STJ impede qualquer atuação de ofício.", "Anular automaticamente o contrato inteiro.", "Declinar da competência de ofício, por constituir prática abusiva.", "Extinguir o processo com resolução de mérito.", "Aplicar pena de prisão ao advogado."], ans: 2, exp: "CPC, art. 63, §§ 3º e 5º (Lei nº 14.879/2024) e STJ (2025): o juízo aleatório constitui prática abusiva que justifica declinação de ofício." },
+  { tag: "Aula ESA", q: "Qual é o recurso cabível contra a decisão interlocutória que acolhe ou rejeita alegação de incompetência, segundo o STJ?", opts: ["Apelação.", "Embargos de declaração exclusivamente.", "Recurso especial direto.", "Agravo de instrumento (Tema 988/STJ — taxatividade mitigada).", "Mandado de segurança obrigatório."], ans: 3, exp: "STJ, Tema 988 (repetitivo vinculante — art. 927, III, CPC) e julgado de 2023: cabe agravo de instrumento." },
+  { tag: "Aula ESA", q: "Qual é a regra de competência territorial favorável ao consumidor prevista no art. 101, inciso I, do CDC?", opts: ["A ação deve ser proposta obrigatoriamente na sede do fornecedor.", "A ação deve ser proposta em Brasília.", "O consumidor pode propor a ação de responsabilidade civil no seu próprio domicílio.", "O fornecedor escolhe o foro unilateralmente.", "O CDC não prevê regra de competência."], ans: 2, exp: "CDC, art. 101, I: 'a ação pode ser proposta no domicílio do autor'." },
+  { tag: "Aula ESA", q: "A interpretação conforme dada pelo STF na ADI 5.737/DF (restringindo o domicílio do autor aos limites territoriais do Estado réu) aplica-se à União e aos Municípios?", opts: ["Sim, aplica-se identicamente à União e aos Municípios.", "Aplica-se apenas à União.", "Não se aplica à União (cuja advocacia pública atua em todo o país) nem aos Municípios.", "Aplica-se apenas aos Municípios.", "Foi revogada em 2024."], ans: 2, exp: "Aula 08: a restrição da ADI 5.737/DF refere-se aos Estados-membros, não alcançando a União nem os Municípios." },
+  { tag: "Aula ESA", q: "Segundo julgado do STJ de fevereiro de 2025 citado na aula, o consumidor que pretende acionar um fornecedor:", opts: ["Está obrigado a propor a ação exclusivamente em seu domicílio.", "Pode escolher entre o seu domicílio, o domicílio do réu ou o local de cumprimento da obrigação.", "Só pode acionar no domicílio do réu em compras pela internet.", "Não pode utilizar os Juizados Especiais.", "Precisa de cláusula de eleição de foro."], ans: 1, exp: "STJ (fev./2025) c/c art. 101, I, CDC e art. 4º, III, Lei nº 9.099/1995: flexibilidade em favor do consumidor." },
+  { tag: "Aula ESA", q: "Na ação de reparação de dano decorrente de acidente de veículo (art. 53, V, CPC), quais são os foros concorrentes à disposição do autor?", opts: ["Apenas o local do acidente.", "Apenas o domicílio do réu.", "Domicílio do autor, local do fato (acidente) ou domicílio do réu.", "Apenas a capital do Estado onde o veículo foi emplacado.", "Domicílio das testemunhas."], ans: 2, exp: "CPC, art. 53, V, c/c art. 46: tríplice opção (domicílio do autor, local do fato ou domicílio do réu)." },
+  { tag: "Aula ESA", q: "O que estabelece a Súmula 540 do STJ sobre a ação de cobrança do seguro DPVAT?", opts: ["Deve ser proposta exclusivamente na sede da seguradora.", "Constitui faculdade do autor escolher entre os foros do seu domicílio, do local do acidente ou do domicílio do réu.", "É de competência absoluta da Justiça Federal.", "Exige prévio esgotamento administrativo.", "Deve ser proposta apenas no local do acidente."], ans: 1, exp: "Súmula 540/STJ: tríplice opção de foro para cobrança do seguro DPVAT." },
+  { tag: "Aula ESA", q: "Qual dispositivo do CPC permite que Estados e Distrito Federal firmem convênios recíprocos para prática de atos processuais por seus procuradores em favor de outro ente federado?", opts: ["Art. 46, § 5º.", "Art. 75, § 4º.", "Art. 63, § 2º.", "Art. 48, parágrafo único.", "Art. 203, § 2º."], ans: 1, exp: "CPC, art. 75, § 4º: prevê convênio entre procuradorias de Estados e do DF." },
+  { tag: "Aula ESA", q: "Qual é o fundamento normativo no CPC que confere eficácia vinculante aos acórdãos em recursos especiais repetitivos (como o Tema 988/STJ)?", opts: ["Art. 46, caput.", "Art. 64, § 3º.", "Art. 927, inciso III.", "Art. 1.015, inciso IV.", "Art. 53, inciso II."], ans: 2, exp: "CPC, art. 927, III: juízes e tribunais observarão os acórdãos em julgamento de recursos extraordinário e especial repetitivos." },
+  { tag: "Aula ESA", q: "Na ação de reparação de dano sofrido em razão de acidente de veículos prevista no art. 53, V, do CPC, o legislador incluiu expressamente:", opts: ["Apenas automóveis de passeio.", "Apenas motocicletas.", "Inclusive aeronaves.", "Exclusivamente veículos terrestres de carga.", "Apenas transporte público coletivo."], ans: 2, exp: "CPC, art. 53, V: 'acidente de veículos, inclusive aeronaves'." },
+
+  // 21-50: Aprofundamento em Lei Seca (CPC, CDC, Lei 9.099/95, Súmulas STJ) e Doutrina do Vault (Elpídio Donizetti)
+  { tag: "CPC Art. 63", q: "Segundo o STJ (CC 206.933/SP — 2025, Vault), qual é o marco intertemporal de aplicação da Lei nº 14.879/2024 (reforma do art. 63 do CPC sobre juízo aleatório)?", opts: ["Aplica-se apenas a contratos assinados após 2025.", "Por ter natureza processual, aplica-se aos processos ajuizados a partir de 05/06/2024, independentemente da data de assinatura do contrato.", "Aplica-se retroativamente para anular sentenças transitadas em julgado.", "Só vale para contratos de adesão assinados em 2024.", "Não se aplica a contratos firmados antes de 05/06/2024."], ans: 1, exp: "Elpídio Donizetti (Cap. 3 — Vault): STJ, CC 206.933/SP (2025) fixou a data do ajuizamento (05/06/2024), sendo irrelevante a data do contrato." },
+  { tag: "CPC Art. 63", q: "Nos termos do art. 63, § 3º, do CPC, reputada ineficaz de ofício a cláusula abusiva de eleição de foro ANTES da citação, o juiz determinará:", opts: ["A extinção do processo sem mérito.", "A remessa dos autos ao juízo do foro de domicílio do réu.", "A citação por edital.", "A remessa ao STJ.", "O arquivamento definitivo."], ans: 1, exp: "CPC, art. 63, § 3º: determinará a remessa dos autos ao juízo do foro de domicílio do réu." },
+  { tag: "CPC Art. 63", q: "De acordo com o art. 63, § 4º, do CPC, uma vez CITADO o réu, o que lhe incumbe fazer quanto à abusividade da cláusula de eleição de foro?", opts: ["Aguardar que o juiz a reconheça de ofício na sentença.", "Alegar a abusividade na contestação, sob pena de preclusão.", "Impetrar mandado de segurança.", "Apresentar exceção em autos apartados.", "Recorrer diretamente ao STF."], ans: 1, exp: "CPC, art. 63, § 4º: citado, incumbe ao réu alegar a abusividade na contestação, sob pena de preclusão." },
+  { tag: "CPC Art. 63", q: "O foro contratual validamente eleito pelas partes (art. 63, § 2º, CPC):", opts: ["Extingue-se com o falecimento das partes.", "Obriga os herdeiros e sucessores das partes.", "Obriga apenas o autor.", "Só vale por 2 anos.", "Não vincula sucessores empresariais."], ans: 1, exp: "CPC, art. 63, § 2º: 'O foro contratual obriga os herdeiros e sucessores das partes.'" },
+  { tag: "CPC Art. 63", q: "A exigência de pertinência da eleição de foro com o domicílio/residência das partes ou local da obrigação (art. 63, § 1º, CPC) traz qual ressalva expressa?", opts: ["Ações de execução fiscal.", "A pactuação consumerista, quando favorável ao consumidor.", "Ações de usucapião.", "Contratos bancários de adesão.", "Nenhuma ressalva."], ans: 1, exp: "CPC, art. 63, § 1º, parte final: 'ressalvada a pactuação consumerista, quando favorável ao consumidor'." },
+  { tag: "CPC Art. 64", q: "Declarada a incompetência (absoluta ou relativa), o que acontece com os efeitos das decisões já proferidas pelo juízo incompetente (art. 64, § 4º, CPC)?", opts: ["São automaticamente nulos de pleno direito.", "Salvo decisão judicial em sentido contrário, conservam-se até que outra decisão seja proferida, se for o caso, pelo juízo competente.", "Conservam-se apenas na incompetência relativa.", "Caducam em 15 dias.", "Precisam ser ratificados pelo Ministério Público."], ans: 1, exp: "CPC, art. 64, § 4º: princípio da conservação dos efeitos dos atos decisórios." },
+  { tag: "CPC Art. 48", q: "No inventário, se o autor da herança NÃO possuía domicílio certo no Brasil e deixou bens imóveis em foros diferentes (art. 48, parágrafo único, II, CPC), qual foro é competente?", opts: ["Apenas a capital do Estado mais populoso.", "Qualquer dos foros onde estejam situados os bens imóveis.", "O foro do domicílio do herdeiro mais velho.", "O foro do local do óbito obrigatoriamente.", "O Distrito Federal."], ans: 1, exp: "CPC, art. 48, parágrafo único, II: havendo bens imóveis em foros diferentes, qualquer destes." },
+  { tag: "CPC Art. 48", q: "Se o autor da herança não possuía domicílio certo e NÃO deixou bens imóveis (art. 48, parágrafo único, III, CPC), qual foro é competente para o inventário?", opts: ["O foro do local de qualquer dos bens do espólio.", "Apenas o foro do local do óbito.", "A Justiça Federal.", "O foro do domicílio do inventariante dativo.", "O foro da capital federal."], ans: 0, exp: "CPC, art. 48, parágrafo único, III: não havendo bens imóveis, o foro do local de qualquer dos bens do espólio." },
+  { tag: "CPC Art. 46", q: "Havendo 2 (dois) ou mais réus com diferentes domicílios (art. 46, § 4º, CPC), onde deverão ser demandados?", opts: ["Obrigatoriamente no domicílio do réu mais velho.", "No foro de qualquer deles, à escolha do autor.", "No domicílio do autor.", "Na capital do Estado do primeiro réu.", "Em ações obrigatoriamente separadas."], ans: 1, exp: "CPC, art. 46, § 4º: serão demandados no foro de qualquer deles, à escolha do autor." },
+  { tag: "CPC Art. 46", q: "Sendo incerto ou desconhecido o domicílio do réu (art. 46, § 2º, CPC), ele poderá ser demandado:", opts: ["Apenas em Brasília.", "Onde for encontrado ou no foro de domicílio do autor.", "Apenas por carta precatória.", "Somente após declaração de ausência.", "Apenas no local de nascimento."], ans: 1, exp: "CPC, art. 46, § 2º: onde for encontrado ou no foro de domicílio do autor." },
+  { tag: "CPC Art. 46", q: "Quando o réu não tiver domicílio ou residência no Brasil e o autor também residir fora do Brasil (art. 46, § 3º, CPC), onde a ação será proposta?", opts: ["Em nenhum foro brasileiro.", "Obrigatoriamente no Distrito Federal.", "Em qualquer foro.", "Apenas em São Paulo ou Rio de Janeiro.", "Perante o STJ originariamente."], ans: 2, exp: "CPC, art. 46, § 3º: se o autor também residir fora do Brasil, a ação será proposta em qualquer foro." },
+  { tag: "CPC Art. 47", q: "Segundo o art. 47, §§ 1º e 2º, do CPC (Vault — Donizetti, Cap. 3), a competência do foro da situação da coisa (forum rei sitae) para ações de propriedade, vizinhança, servidão, divisão, demarcação e posse sobre bens imóveis tem natureza:", opts: ["Territorial relativa (prorrogável).", "Territorial absoluta (não admite eleição de foro nem prorrogação).", "Facultativa ao autor.", "Exclusiva dos Juizados Especiais.", "Concorrente com o domicílio do réu."], ans: 1, exp: "Elpídio Donizetti (Cap. 3): trata-se da clássica hipótese de competência territorial absoluta no CPC." },
+  { tag: "CPC Art. 53", q: "Na ação de divórcio em que NÃO haja filho incapaz, nem nenhuma das partes resida mais no antigo domicílio do casal (e sem violência doméstica), qual é o foro competente segundo o art. 53, I, 'c', do CPC?", opts: ["O último domicílio do casal.", "O domicílio do autor.", "O domicílio do réu.", "O local do casamento.", "A capital do Estado."], ans: 2, exp: "CPC, art. 53, I, 'c': de domicílio do réu, se nenhuma das partes residir no antigo domicílio do casal." },
+  { tag: "CPC Art. 53", q: "Pela inovação incluída no art. 53, I, 'd', do CPC (Lei nº 13.894/2019 — Vault), nas ações de divórcio ou dissolução de união estável envolvendo violência doméstica e familiar (Lei Maria da Penha), é competente o foro:", opts: ["Do domicílio do réu.", "Do último domicílio do casal.", "Do domicílio da vítima de violência doméstica e familiar.", "Do local da delegacia apenas.", "Da capital do Estado."], ans: 2, exp: "CPC, art. 53, I, 'd': foro de domicílio da vítima de violência doméstica e familiar." },
+  { tag: "CPC Art. 53", q: "Para a causa que verse sobre direito previsto no Estatuto da Pessoa Idosa (art. 53, III, 'e', CPC), qual é o foro competente?", opts: ["Do domicílio do réu.", "De residência do idoso.", "Do local do fato.", "Da capital do Estado.", "Do Ministério Público."], ans: 1, exp: "CPC, art. 53, III, 'e': foro de residência do idoso." },
+  { tag: "CPC Art. 53", q: "Para a ação de reparação de dano por ato praticado em razão do ofício por serventia notarial ou de registro (art. 53, III, 'f', CPC), qual é o foro competente?", opts: ["Do domicílio do autor.", "Da sede da serventia notarial ou de registro.", "Da capital do Estado.", "Da Justiça Federal.", "Do domicílio do tabelião pessoa física apenas."], ans: 1, exp: "CPC, art. 53, III, 'f': da sede da serventia notarial ou de registro." },
+  { tag: "CPC Art. 51", q: "Quando a UNIÃO for RÉ em uma demanda (art. 51, parágrafo único, CPC e art. 109, § 2º, CF/88 — Vault), onde a ação poderá ser proposta?", opts: ["Exclusivamente no Distrito Federal.", "Apenas no domicílio do autor.", "No foro de domicílio do autor, no de ocorrência do ato ou fato, no de situação da coisa ou no Distrito Federal.", "Apenas na capital do Estado do autor.", "Perante a Justiça Estadual."], ans: 2, exp: "CPC, art. 51, parágrafo único, e CF/88, art. 109, § 2º: quádrupla opção de foro contra a União." },
+  { tag: "Súmula STJ", q: "Conforme a Súmula 1 do STJ (registrada no Vault — Cap. 3 de Donizetti), o foro do domicílio ou residência do alimentando (art. 53, II, CPC):", opts: ["Não se aplica se houver pedido de investigação de paternidade.", "Aplica-se inclusive na ação de investigação de paternidade cumulada com alimentos.", "É de competência absoluta.", "Só vale para menores de 12 anos.", "Só vale se o réu morar no mesmo Estado."], ans: 1, exp: "Elpídio Donizetti (Cap. 3): Súmula 1/STJ aplica o foro do alimentando à investigação de paternidade cumulada com alimentos." },
+  { tag: "CPC Art. 65", q: "O Ministério Público pode alegar a incompetência relativa (art. 65, parágrafo único, CPC — Vault)?", opts: ["Nunca, pois é interesse exclusivamente privado.", "Sim, nas causas em que atuar.", "Apenas em ações penais.", "Somente após a sentença.", "Apenas se o réu for revel."], ans: 1, exp: "CPC, art. 65, parágrafo único: a incompetência relativa pode ser alegada pelo Ministério Público nas causas em que atuar." },
+  { tag: "CPC Art. 340", q: "Havendo alegação de incompetência relativa ou absoluta, onde o réu pode protocolar a contestação segundo o art. 340 do CPC (Vault — Donizetti, Cap. 3)?", opts: ["Exclusivamente no foro onde tramita a ação.", "No foro de seu próprio domicílio, comunicando-se o juízo da causa (preferencialmente por meio eletrônico).", "Apenas no Tribunal de Justiça.", "Na sede da OAB.", "No Ministério Público."], ans: 1, exp: "CPC, art. 340 (Donizetti, Cap. 3): faculta ao réu protocolar a contestação no foro de seu domicílio." },
+  { tag: "Doutrina Vault", q: "Segundo o STF (ADIs 6.792 e 7.055 — registradas no Vault, Cap. 3 de Donizetti), no caso de assédio judicial contra jornalistas mediante ajuizamento pulverizado predatório, a competência transfere-se para:", opts: ["O domicílio do autor.", "O Distrito Federal.", "O domicílio do jornalista demandado.", "A sede do jornal apenas.", "O STF originariamente."], ans: 2, exp: "Elpídio Donizetti (Cap. 3): STF (ADIs 6.792 e 7.055) fixou o domicílio do jornalista demandado para coibir assédio judicial." },
+  { tag: "Lei 9.099/95", q: "No Juizado Especial Cível Estadual (art. 51, III, da Lei nº 9.099/1995 — Vault, Cap. 12 de Donizetti), o reconhecimento da incompetência territorial gera:", opts: ["A simples remessa dos autos ao juízo competente, como no CPC.", "A extinção do processo sem resolução do mérito.", "A prorrogação automática sempre.", "A remessa obrigatória à Justiça Federal.", "A condenação do réu por litigância de má-fé."], ans: 1, exp: "Donizetti (Cap. 12): diferentemente do art. 64, § 3º, do CPC, no JEC Estadual a incompetência territorial gera extinção sem mérito (art. 51, III, Lei 9.099/95)." },
+  { tag: "CPC Art. 59", q: "Pelo critério unificado do CPC/2015 (art. 59 — Vault, Cap. 3 de Donizetti), o que determina a prevenção do juízo?", opts: ["A citação válida do réu.", "O despacho positivo inicial ('cite-se').", "O registro ou a distribuição da petição inicial.", "A audiência de conciliação.", "A apresentação da contestação."], ans: 2, exp: "CPC, art. 59: o registro ou a distribuição da petição inicial torna prevento o juízo." },
+  { tag: "CPC Art. 55", q: "Conforme o art. 55, § 1º, do CPC e a Súmula 235 do STJ (Vault — Donizetti, Cap. 3), a conexão:", opts: ["Determina a reunião dos processos mesmo após o trânsito em julgado de um deles.", "Não determina a reunião dos processos se um deles já foi sentenciado (julgado).", "Aplica-se apenas na incompetência absoluta.", "Exige identidade de partes, pedido e causa de pedir.", "Altera a competência absoluta em razão da matéria."], ans: 1, exp: "CPC, art. 55, § 1º, e Súmula 235/STJ: não há reunião por conexão se um dos processos já foi julgado." },
+  { tag: "CPC Art. 57", q: "Na continência (art. 57 do CPC — Vault, Cap. 3 de Donizetti), quando a ação continente (mais ampla) tiver sido proposta ANTES da ação contida (menor), o que ocorre?", opts: ["Reúnem-se ambos os processos sempre.", "A ação contida posterior será extinta sem resolução do mérito.", "Extingue-se a ação continente.", "Remetem-se ambas ao STJ.", "Julgam-se separadamente."], ans: 1, exp: "CPC, art. 57: se a ação continente for anterior, a contida posterior é extinta sem resolução do mérito." },
+  { tag: "CPC Art. 61", q: "A regra segundo a qual a ação acessória será proposta no juízo competente para a ação principal (art. 61, CPC — Vault) representa competência de natureza:", opts: ["Relativa e prorrogável.", "Funcional (absoluta).", "Facultativa ao réu.", "Exclusiva de contratos de consumo.", "Territorial disponível."], ans: 1, exp: "Elpídio Donizetti (Cap. 3): a competência por acessoriedade (art. 61) tem natureza funcional (absoluta)." },
+  { tag: "CPC Art. 952", q: "Quem NÃO pode suscitar conflito de competência segundo o art. 952 do CPC (Vault — Donizetti, Cap. 3)?", opts: ["O juiz de primeiro grau.", "O Ministério Público.", "A parte que, no processo, arguiu incompetência relativa.", "O autor da demanda em qualquer hipótese.", "O relator do tribunal."], ans: 2, exp: "CPC, art. 952: não pode suscitar conflito a parte que, no processo, arguiu incompetência relativa." },
+  { tag: "CPC Art. 53", q: "Para a ação em que for ré pessoa jurídica, qual é o foro competente quanto às obrigações contraídas por agência ou sucursal (art. 53, III, 'b', CPC)?", opts: ["Exclusivamente a sede matriz.", "O lugar onde se acha a agência ou sucursal, quanto às obrigações que ela contraiu.", "Apenas o domicílio do autor.", "A capital do Estado.", "O foro de eleição aleatório."], ans: 1, exp: "CPC, art. 53, III, 'b': lugar onde se acha a agência ou sucursal quanto às obrigações que contraiu." },
+  { tag: "CPC Art. 46", q: "Tendo o réu mais de um domicílio (art. 46, § 1º, CPC), onde será demandado?", opts: ["No foro de qualquer deles.", "Apenas no domicílio mais antigo.", "Apenas no domicílio profissional.", "No domicílio do autor.", "Na capital do Estado."], ans: 0, exp: "CPC, art. 46, § 1º: tendo mais de um domicílio, o réu será demandado no foro de qualquer deles." },
+  { tag: "Revisão Geral", q: "Assinale a alternativa INTEIRAMENTE CORRETA sobre competência territorial no CPC e na jurisprudência do STF/STJ:", opts: ["A decisão sobre competência é sentença recorrível por apelação.", "Na ADI 5.737/DF, o STF permitiu acionar um Estado-membro no domicílio de autor residente em outro Estado.", "A competência territorial é em regra relativa (Súmula 33/STJ), mas a Lei nº 14.879/2024 (art. 63, §§ 1º e 5º, CPC) autoriza a declinação de ofício em caso de juízo aleatório; e contra decisão sobre competência cabe agravo de instrumento (Tema 988/STJ).", "Na cobrança do DPVAT, o autor só pode ajuizar a ação no local do acidente.", "O consumidor é obrigado a processar o fornecedor na sede da empresa em compras pela internet."], ans: 2, exp: "Síntese exata da Súmula 33/STJ, da Lei nº 14.879/2024 (art. 63, §§ 1º e 5º, CPC) e do Tema 988/STJ." }
+];
+
+const state = {};
+function renderQuiz() {
+  const container = document.getElementById("quizContainer");
+  container.innerHTML = "";
+  const letters = ["A", "B", "C", "D", "E"];
+  QUESTIONS.forEach((item, idx) => {
+    const card = document.createElement("div");
+    card.className = "q-card";
+    const optsHtml = item.opts.map((opt, oi) =>
+      `<button class="opt-btn" id="q${idx}_o${oi}" onclick="answer(${idx}, ${oi})"><strong>${letters[oi]}.</strong> ${opt}</button>`
+    ).join("");
+    card.innerHTML = `
+      <div class="q-head"><span class="q-tag">${item.tag}</span>${idx + 1}. ${item.q}</div>
+      ${optsHtml}
+      <div class="q-exp" id="q${idx}_exp"><strong>Gabarito (${letters[item.ans]}):</strong> ${item.exp}</div>`;
+    container.appendChild(card);
+  });
+  updateScore();
+}
+function answer(qi, oi) {
+  if (state[qi] !== undefined) return;
+  state[qi] = oi;
+  const item = QUESTIONS[qi];
+  for (let i = 0; i < item.opts.length; i++) {
+    const btn = document.getElementById(`q${qi}_o${i}`);
+    btn.disabled = true;
+    if (i === item.ans) btn.classList.add("correct");
+    else if (i === oi) btn.classList.add("wrong");
+  }
+  document.getElementById(`q${qi}_exp`).classList.add("show");
+  updateScore();
+}
+function updateScore() {
+  const answered = Object.keys(state).length;
+  const correct = Object.entries(state).filter(([qi, oi]) => QUESTIONS[qi].ans === oi).length;
+  document.getElementById("scoreBox").textContent = `Respondidas: ${answered} / ${QUESTIONS.length} · Acertos: ${correct}`;
+}
+function resetQuiz() {
+  Object.keys(state).forEach(k => delete state[k]);
+  renderQuiz();
+}
+renderQuiz();
+</script>
+</body>
+</html>
